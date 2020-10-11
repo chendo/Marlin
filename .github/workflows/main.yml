@@ -21,7 +21,10 @@ jobs:
       - name: Compile
         uses: chendo/marlin-compile-action@main
         id: compile
-
+        with:
+          configuration_url: https://github.com/MarlinFirmware/Configurations/raw/bugfix-2.0.x/config/examples/Creality/Ender-3%20V2/Configuration.h
+          configuration_adv_url: https://github.com/MarlinFirmware/Configurations/raw/bugfix-2.0.x/config/examples/Creality/Ender-3%20V2/Configuration_adv.h 
+          platformio_args: "-e STM32F103RET6_creality" 
       - name: Expose firmware artifacts
         uses: actions/upload-artifact@v2
         with:
