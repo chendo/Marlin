@@ -21,3 +21,10 @@ jobs:
       - name: Compile
         uses: chendo/marlin-compile-action@main
         id: compile
+
+      - name: Expose firmware artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: |
+            .pio/build/*/*.bin
